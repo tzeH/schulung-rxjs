@@ -49,6 +49,6 @@ Aufgabe: Loggt alle Aufrufe mit dem Operator tap(). (Diese Aufgabe darf ausnahms
 
 Aufgabe: Sorgt dafür, dass nur noch eine Anfrage an den Server geht. Verwendet dafür einmal den Operatoren share() und einmal shareReplay(). Was ist der Unterschied?
 
-### flatMap, concatMap, switchMap
+### mergeMap, concatMap, switchMap
 
-Aufgabe: Ergänzt den aktuellen Kurs der Wertpapiere mit dem Operator concatMap(). Was ist der Unterschied zu flatMap() und switchMap()?
+Aufgabe: Ergänzt den aktuellen Kurs der Wertpapiere mit dem Operator concatMap(). Was ist der Unterschied zu mergeMap() und switchMap()?
