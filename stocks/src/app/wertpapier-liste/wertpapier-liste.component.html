@@ -1,0 +1,7 @@
+<p *ngIf="!(symbols$ | async)">
+  lade Wertpapiere...
+</p>
+
+<p *ngFor="let symbol of symbols$ | async">
+  {{symbol.symbol}}: {{symbol.name}}
+</p>
