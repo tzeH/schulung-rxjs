@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { concatAll, concatMap, filter, toArray, share, shareReplay } from 'rxjs/operators';
 
-import { SymbolInfo } from '../stocks-api/stocks-types';
+import { QuoteInfo, SymbolInfo } from '../stocks-api/stocks-types';
 import { StocksService } from '../stocks-api/stocks.service';
 
 @Component({
@@ -9,15 +10,18 @@ import { StocksService } from '../stocks-api/stocks.service';
   templateUrl: './wertpapier-liste.component.html',
   styleUrls: ['./wertpapier-liste.component.scss']
 })
-export class WertpapierListeComponent implements OnInit {
+export class WertpapierListeComponent {
 
   readonly symbols$: Observable<SymbolInfo[]>;
 
-  constructor(private stocksService: StocksService) {
-    this.symbols$ = stocksService.getSymbols();
-  }
+  readonly quotes$: Observable<QuoteInfo[]>;
 
-  ngOnInit() {
+  constructor(stocksService: StocksService) {
+    this.symbols$ = stocksService.getSymbols();
+
+    this.quotes$ = of([
+      <any>{ symbol: 'FOO', latestPrice: '13.37' } as QuoteInfo
+    ]);
   }
 
 }

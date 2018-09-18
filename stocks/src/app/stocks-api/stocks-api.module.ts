@@ -15,7 +15,7 @@ import { StocksOnlineService } from './stocks-online.service';
   providers: [
     HttpClientModule,
     { provide: StocksService, useClass: StocksOfflineService },
-// { provide: StocksService, useClass: StocksOnlineService }
+    // { provide: StocksService, useClass: StocksOnlineService }
   ]
 })
 export class StocksApiModule { }

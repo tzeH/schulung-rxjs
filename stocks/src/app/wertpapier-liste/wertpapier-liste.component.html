@@ -2,6 +2,15 @@
   lade Wertpapiere...
 </p>
 
-<p *ngFor="let symbol of symbols$ | async">
-  {{symbol.symbol}}: {{symbol.name}}
-</p>
+<div *ngIf="symbols$ | async">
+  <h2>Wertpapiere</h2>
+  <p *ngFor="let symbol of symbols$ | async">
+    {{symbol.symbol}}: {{symbol.name}}
+  </p>
+
+  <h2>Preise</h2>
+  <p *ngFor="let quote of quotes$ | async">
+    {{quote.symbol}}: {{quote.latestPrice}}
+  </p>
+</div>
+
