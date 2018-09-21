@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { concatAll, concatMap, filter, toArray, share, shareReplay } from 'rxjs/operators';
 
 import { QuoteInfo, SymbolInfo } from '../stocks-api/stocks-types';
 import { StocksService } from '../stocks-api/stocks.service';
